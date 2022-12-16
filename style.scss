@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+//################################
+//           Variáveis
+//################################
+$cor-primaria: rgb(19, 70, 33);
+$cor-secundaria: rgb(0, 194, 26);
+$cor-letra-primaria: white;
+$cor-letra-secundaria: black;
+
+//################################
+//           Principal
+//################################
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Manrope', sans-serif;
+}
+
+//################################
+//             Header
+//################################
+
+header {
+    background-color: $cor-primaria;
+    position: sticky;
+    color: $cor-letra-primaria;
+    top: 0;
+    width: 100%;
+    transition: cubic-bezier(0, 1, 0.3, 1) 1s;
+} header div {
+    align-items: center;
+    height: 4.3rem;
+    display: flex;
+    margin: 0 13rem;
+    justify-content: space-between;
+    padding: 0;
+} img {
+    height: 2.3rem;
+}
+
+header div ul {
+    display: flex;
+} li {
+    padding: 10px 20px;
+    text-align: center;
+    transition: cubic-bezier(0, 1, 0.5, 1) 1s;
+} li:hover {
+    color: $cor-secundaria;
+    cursor: pointer;
+}
+
+header:hover {
+    z-index: 999;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.500);
+}
+
+li.liFilled {
+    margin-left: 10px;
+    background-color: $cor-secundaria;
+    font-weight: bold;
+    border-radius: 2rem;
+    transition: cubic-bezier(0, 1, 0.5, 1) 0.35s;
+} 
+li.liFilled:hover {
+    color: $cor-letra-primaria;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scaleX(1.3) scaleY(1.3);
+}
+
+//################################
+//              Body
+//################################
+
+body {
+    margin-bottom: 5rem;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: $cor-letra-primaria;
+    background-color: $cor-primaria;
+    height: 80vh;
+    background-image: url(img/somos_ideais-divider-bottom.png);
+    z-index: 2;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+} h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+} .buttonFilled {
+    background-color: $cor-secundaria;
+    color: $cor-letra-primaria;
+    font-weight: bold;
+    border-radius: 2rem;
+    padding: 1rem 4rem;
+    transition: cubic-bezier(0, 1, 0.5, 1) 1s;
+} .buttonFilled:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scaleX(1.2) scaleY(1.2);
+}
+
+.buttonUnfilled {
+    background-color: $cor-secundaria;
+    color: $cor-letra-primaria;
+    font-weight: bold;
+    border-radius: 2rem;
+    padding: 1rem 4rem;
+    transition: cubic-bezier(0, 1, 0.5, 1) 1s;
+    text-align: center;
+}
+
+.serv {
+    margin-top: 4rem;
+    color: $cor-letra-secundaria;
+}
+
+.serv h3{
+    color: $cor-letra-secundaria;
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.card {
+    display: flex;
+    background-color: rgb(218, 218, 218);
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 19rem;
+    min-width: 19rem;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.226);
+}
+
+.lista{
+    text-align: center;
+}
