@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap');
 
 //################################
 //           Variáveis
 //################################
 $cor-primaria: rgb(19, 70, 33);
-$cor-secundaria: rgb(25, 153, 42);
+$cor-secundaria: rgb(0, 194, 26);
+$cor-button: rgb(32, 170, 94);
 $cor-letra-primaria: white;
 $cor-letra-secundaria: black;
+$cor-card: rgb(205, 205, 205);
 
 //################################
 //           Principal
@@ -17,7 +19,7 @@ $cor-letra-secundaria: black;
     padding: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 //################################
@@ -25,19 +27,19 @@ $cor-letra-secundaria: black;
 //################################
 
 header {
-    background-color: $cor-primaria;
-    position: sticky;
+    z-index: 0;
+    background-color: rgba(19, 70, 33, 0);
     color: $cor-letra-primaria;
+    position: absolute;
     top: 0;
     width: 100%;
-    transition: cubic-bezier(0, 1, 0.3, 1) 1s;
+    transition: ease-in-out 0.2s;
 } header div {
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 4.3rem;
     display: flex;
-    padding: 0;
-    gap: 15vw;
+    margin: 0 15vw;
 } img {
     height: 2.3rem;
 }
@@ -47,7 +49,7 @@ header div ul {
 } li {
     padding: 10px 20px;
     text-align: center;
-    transition: cubic-bezier(0, 1, 0.5, 1) 1s;
+    transition: ease-in-out 0.2s;
 } li:hover {
     color: $cor-secundaria;
     cursor: pointer;
@@ -70,10 +72,10 @@ header:hover {
 
 li.liFilled {
     margin-left: 10px;
-    background-color: $cor-secundaria;
-    font-weight: bold;
+    background-image: linear-gradient(90deg, $cor-button, $cor-secundaria);
+    font-weight: 500;
     border-radius: 2rem;
-    transition: cubic-bezier(0, 1, 0.5, 1) 0.35s;
+    transition: ease-in-out 0.2s;
 } 
 li.liFilled:hover {
     color: $cor-letra-primaria;
@@ -86,7 +88,9 @@ li.liFilled:hover {
 //################################
 
 body {
-    margin-bottom: 5rem;
+    margin-top: -5rem;
+    background-color: #f5fff7;
+    overflow-x: hidden;
 }
 
 .landing {
@@ -97,25 +101,33 @@ body {
     align-items: center;
     color: $cor-letra-primaria;
     background-color: $cor-primaria;
-    height: 80vh;
-    background-image: url(img/somos_ideais-divider-bottom.png);
+    height: 91vh;
+    background-image: url(img/papel-da-contabilidade-990x550.jpg);
     z-index: 2;
     left: 0;
     background-repeat: no-repeat;
-    background-position: center bottom;
-}h1 {
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow-y: hidden;
+    border-radius: 0 0 5rem 5rem;
+    margin-bottom: 4rem;
+} h1 {
+    z-index: 1;
     font-size: 3rem;
     font-weight: bolder;
+    z-index: 1;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.435);
 } h2 {
     font-size: 1.2rem;
     font-weight: normal;
 } .buttonFilled {
-    background-color: $cor-secundaria;
+    background-image: linear-gradient(90deg, $cor-button, $cor-secundaria);
     color: $cor-letra-primaria;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 2rem;
     padding: 1rem 4rem;
-    transition: cubic-bezier(0, 1, 0.5, 1) 1s;
+    transition: ease-in-out 0.2s;
 } .buttonFilled:hover{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform: scaleX(1.2) scaleY(1.2);
@@ -126,10 +138,10 @@ body {
     border: solid 2px;
     border-color: $cor-primaria;
     color: $cor-primaria;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 2rem;
     padding: 1rem 4rem;
-    transition: cubic-bezier(0,.92,.14,1) 0.5s;
+    transition: ease-in-out 0.2s;
     text-align: center;
 }
 
@@ -139,7 +151,6 @@ body {
 }
 
 .serv {
-    margin-top: 4rem;
     color: $cor-letra-secundaria;
 }
 
@@ -157,23 +168,153 @@ body {
 }
 
 .card {
+    color: $cor-letra-secundaria;
     display: flex;
-    background-color: rgb(218, 218, 218);
+    background-color: $cor-letra-primaria;
     flex-direction: column;
     padding: 2rem;
     max-width: 15rem;
     min-width: 15rem;
     border-radius: 1rem;
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.226);
-    transition: 0.1s;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.200);
+    transition: ease-in-out 0.2s;
 }
 
 .card:hover {
+    z-index: 0;
     transform: scale(1.07);
+    box-shadow: 0px 1px 10px 8px rgba(0, 0, 0, 0.200);
 }
 
 .lista{
     text-align: center;
+}
+
+.need{
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center top;
+    justify-items: center;
+    opacity: 0%;
+    transform: translateX(-20rem);
+    transition: ease-in-out .7s;
+}
+.active-anim{
+    opacity: 100%;
+    transform: translateX(0rem);
+}
+
+h3{
+    display: flex;
+    text-align: center;
+    font-size: 2rem;
+    justify-content: center;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.300);
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+}
+
+.coloredText{
+    margin-left: 6pt;
+    text-transform: uppercase;
+    color: $cor-secundaria;
+}
+
+.a4f58a {
+    display: flex;
+    margin: 5rem 14rem;
+    gap: 5rem;
+    align-items: center;
+}
+.a4f58a img{
+    width: 20rem;
+    height: auto;
+}
+
+.departamentos {
+    color: $cor-letra-primaria;
+    background-color: $cor-primaria;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.dep-top{
+    margin-bottom: 5rem;
+}
+
+.dep{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1.8rem;
+}
+
+.card2{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    background-color: $cor-card;
+    padding: 2rem;
+    border-radius: .3rem;
+    color: $cor-letra-secundaria;
+    transition: 0.3s;
+    box-shadow: 0px 0.25rem 1px 0px rgb(181, 181, 181);
+}
+.card2:hover{
+    color: $cor-primaria;
+    transform: translateY(-0.5rem);
+    box-shadow: 0px 0.75rem 1px 0px rgb(181, 181, 181);
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.3);
+}
+.card2 ion-icon{
+    font-size: 1.5rem;
+}
+
+.dep-info{
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    gap: 3rem;
+    margin: 5rem 7rem;
+ul {
+    background-color: $cor-card;
+    border-radius: 0.2rem;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.237);
+li {
+    color: $cor-letra-secundaria;
+}:hover{
+    color: $cor-secundaria;
+}
+}
+}
+.texto .hide{
+    transform: scale(1);
+    transition: scale 1s;
+}
+
+.hide{
+    display: none;
+    transform: scale(0.8);
+}
+
+footer{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: $cor-primaria;
+ul {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    li{
+        padding: 0;
+    }
+}
 }
 
 @media (max-width: 850px) {
